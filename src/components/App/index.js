@@ -11,6 +11,7 @@ import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from '../Firebase';
+import { AuthUserContext } from '../Session';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,9 +36,10 @@ class App extends Component {
 
   render() {
     return (
+      <AuthUserContext.Provider value={this.state.authUser}></AuthUserContext.Provider>
   <Router>
   <div>
-    <Navigation />
+  <Navigation />
 
     <hr />
 
@@ -50,6 +52,7 @@ class App extends Component {
     <Route path={ROUTES.ADMIN} component={AdminPage} />
   </div>
 </Router>
+</AuthUserContext.Provider>
     );
   }
 }
