@@ -1,3 +1,7 @@
+Reacti õppimise projekt
+Kasutatud allikad:
+https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
