@@ -1,14 +1,23 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-const config = {
+/* const config = {
     apiKey: "AIzaSyDFp-_39hwtqw5riIpzbXrcBEaF1987nGg",
     authDomain: "learning-react-e0225.firebaseapp.com",
     databaseURL: "https://learning-react-e0225.firebaseio.com",
     projectId: "learning-react-e0225",
     storageBucket: "learning-react-e0225.appspot.com",
     messagingSenderId: "703717338104",
+  }; */
+  const config = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   };
+
   class Firebase {
     constructor() {
       app.initializeApp(config);
