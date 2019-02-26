@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 const config = {
     apiKey: "AIzaSyDFp-_39hwtqw5riIpzbXrcBEaF1987nGg",
     authDomain: "learning-react-e0225.firebaseapp.com",
@@ -12,6 +13,7 @@ const config = {
     constructor() {
       app.initializeApp(config);
       this.auth = app.auth();
+      this.db = app.database();
     }
       // *** Auth API ***
 
@@ -27,6 +29,18 @@ const config = {
 
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
+
+      // *** User API ***
+
+  user = uid => this.db.ref(`users/${uid}`);
+
+  users = () => this.db.ref('users');
+
+    // *** Computer API ***
+
+    computer = uid => this.db.ref(`computers/${uid}`);
+
+    computers = () => this.db.ref('computers');
   }
   
   export default Firebase;
