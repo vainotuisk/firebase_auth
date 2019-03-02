@@ -40,9 +40,9 @@ import 'firebase/database';
 
     // *** Computer API ***
 
-    computer = uid => this.db.ref(`computers/${uid}`);
+    arvuti = uid => this.db.ref(`arvutid/${uid}`);
 
-    computers = () => this.db.ref('computers');
+    arvutid = () => this.db.ref('arvutid');
   }
   
   export default Firebase;
